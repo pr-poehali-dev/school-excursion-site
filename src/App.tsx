@@ -38,10 +38,10 @@ const App = () => {
         <footer className="border-t border-border py-8 px-6">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="font-body text-sm text-muted-foreground">
-              © 2024 Школьный музей. Все права защищены.
+              © 2024 Музей им. С.В. Палагина · Школа №103, Краснодар
             </div>
             <div className="font-display text-sm text-gold italic">
-              Помним, храним, передаём
+              Помним. Гордимся. Передаём.
             </div>
           </div>
         </footer>

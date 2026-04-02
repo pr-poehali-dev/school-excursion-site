@@ -1,48 +1,48 @@
 import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 
-const HALL_IMG = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/files/538614c2-b1a4-4fe7-b4e1-e608b1df8cdf.jpg';
-const EXHIBIT_IMG = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/files/fe29102b-79f4-43bf-adb0-4447ed833057.jpg';
-const GALLERY_IMG = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/files/4fc9d983-f2d1-48af-9a0b-71ed49344bfc.jpg';
+const IMG_HELI = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/files/85c5bbe1-0716-47c0-be11-ceb9dad6bab8.jpg';
+const IMG_HELM = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/files/236517fa-ef53-49e5-87ff-d59b8c43a1c5.jpg';
+const IMG_MEDAL = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/files/59525366-53c6-49f3-8f7a-4569f4594fd9.jpg';
 
 const halls = [
   {
     id: 1,
-    name: 'Зал основания',
-    year: '1962',
-    description: 'История создания школы, первые учителя и ученики. Документы и фотографии первых лет.',
-    image: HALL_IMG,
-    color: 'from-amber-900/40',
+    name: 'Жизнь и подвиг Палагина',
+    year: 'Центральный зал',
+    description: 'Центральная часть фонда. Личные вещи полковника — элементы лётного снаряжения, китель, фуражка, переданные супругой. Фотоматериалы боевых будней и операций на Северном Кавказе.',
+    image: IMG_HELM,
+    color: 'from-amber-900/50',
     hotspots: [
-      { x: 25, y: 40, label: 'Первый директор', desc: 'Иван Петрович Смирнов — основатель школы, проработавший здесь 30 лет' },
-      { x: 60, y: 55, label: 'Грамоты 1965 года', desc: 'Первые награды школы на городской олимпиаде по математике' },
-      { x: 80, y: 35, label: 'Классная доска', desc: 'Оригинальная меловая доска из первого класса, датированная 1962 годом' },
+      { x: 25, y: 42, label: 'Лётный шлем «Братишки»', desc: 'Личный лётный шлем С.В. Палагина с вертолёта Ми-8 МТВ-2. Был в кабине во время всех боевых вылетов. Передан в дар школе супругой Героя.' },
+      { x: 62, y: 55, label: 'Перчатки лётчика', desc: 'Кожаные лётные перчатки — часть экипировки пилота вертолёта. Один из самых личных и трогательных экспонатов фонда.' },
+      { x: 80, y: 32, label: 'Фотоархив семьи', desc: 'Снимки из личного архива, запечатлевшие боевые будни лётчика в период операций в Чечне и Дагестане.' },
     ]
   },
   {
     id: 2,
-    name: 'Зал достижений',
-    year: '1970–1990',
-    description: 'Золотые годы школы. Кубки, дипломы, олимпиадные победы и выдающиеся выпускники.',
-    image: EXHIBIT_IMG,
-    color: 'from-yellow-900/40',
+    name: 'История боевой славы',
+    year: 'Зал №2',
+    description: 'Экспонаты, посвящённые локальным конфликтам и современной истории Вооружённых Сил РФ. Элементы обмундирования, памятные знаки и гильзы поисковых экспедиций.',
+    image: IMG_HELI,
+    color: 'from-slate-900/60',
     hotspots: [
-      { x: 30, y: 50, label: 'Кубок чемпионов', desc: 'Победа в городском первенстве по волейболу 1978 года' },
-      { x: 65, y: 35, label: 'Стенд выпускников', desc: 'Выпускники, ставшие учёными, артистами и государственными деятелями' },
-      { x: 50, y: 70, label: 'Летопись школы', desc: 'Рукописная летопись, которую вели старшеклассники с 1970 по 1990 год' },
+      { x: 28, y: 48, label: 'Ми-8 МТВ-2 «Братишка»', desc: 'Боевой вертолёт, на котором Палагин совершал вылеты в Чечне. Солдаты дали машине имя «Братишка» за то, что она всегда возвращала их домой.' },
+      { x: 60, y: 38, label: 'Карта операций', desc: 'Карта боевых действий с отмеченными маршрутами вылетов. Лето 2000 — эвакуация десантников, июнь 2002 — спасение разведчиков у Шали.' },
+      { x: 78, y: 62, label: 'Гильзы с мест боёв', desc: 'Гильзы, найденные в ходе поисковых экспедиций в районах операций в Северо-Кавказском регионе.' },
     ]
   },
   {
     id: 3,
-    name: 'Зал памяти',
-    year: '1941–1945',
-    description: 'Память о педагогах и выпускниках — участниках Великой Отечественной войны.',
-    image: GALLERY_IMG,
-    color: 'from-red-900/30',
+    name: 'Кубань — край Героев',
+    year: 'Зал №3',
+    description: 'Материалы о выдающихся жителях Краснодарского края и истории развития авиации на Кубани. Связь судьбы Героя с историей региона.',
+    image: IMG_MEDAL,
+    color: 'from-yellow-900/50',
     hotspots: [
-      { x: 20, y: 45, label: 'Книга памяти', desc: 'Имена 47 выпускников, погибших в годы Великой Отечественной войны' },
-      { x: 55, y: 30, label: 'Письма с фронта', desc: 'Подлинные письма учителя истории Фёдора Кузнецова, отправленные с фронта' },
-      { x: 75, y: 60, label: 'Медали и ордена', desc: 'Коллекция наград, переданных семьями ветеранов в дар музею' },
+      { x: 30, y: 45, label: 'Золотая Звезда Героя РФ', desc: 'Копия государственной награды — медали «Золотая Звезда» Героя Российской Федерации, присвоенной Указом Президента от 6 апреля 2004 года.' },
+      { x: 58, y: 35, label: 'Именная доска школы', desc: 'В 2022 году решением городской Думы Краснодара школе №103 присвоено имя Героя. Здесь хранятся материалы о присвоении.' },
+      { x: 75, y: 58, label: 'Авиация Кубани', desc: 'Стенд об истории военной авиации Краснодарского края и 487-м отдельном вертолётном полку в Будённовске.' },
     ]
   },
 ];
@@ -62,6 +62,9 @@ const TourPage = () => {
             3D-экскурсия<br />
             <span className="italic text-gold">по залам музея</span>
           </h1>
+          <p className="font-body text-sm text-muted-foreground mt-3 max-w-lg">
+            Нажимайте на золотые точки, чтобы узнать об экспонатах. Музей им. С.В. Палагина, школа №103, Краснодар.
+          </p>
         </div>
 
         {/* Hall selector */}
@@ -86,16 +89,14 @@ const TourPage = () => {
           {/* Panorama */}
           <div className="lg:col-span-2">
             <div className="relative rounded-xl overflow-hidden aspect-[16/10] museum-card">
-              {/* Background image */}
               <img
                 src={hall.image}
                 alt={hall.name}
                 className="absolute inset-0 w-full h-full object-cover transition-all duration-700"
               />
               <div className={`absolute inset-0 bg-gradient-to-t ${hall.color} to-transparent`} />
-              <div className="absolute inset-0 bg-black/30" />
+              <div className="absolute inset-0 bg-black/35" />
 
-              {/* Hall info */}
               <div className="absolute top-5 left-5 z-10">
                 <div className="glass rounded-lg px-4 py-2">
                   <div className="font-body text-xs text-gold uppercase tracking-widest">{hall.year}</div>
@@ -103,7 +104,6 @@ const TourPage = () => {
                 </div>
               </div>
 
-              {/* Navigation arrows */}
               <button
                 onClick={() => { setActiveHall((activeHall - 1 + halls.length) % halls.length); setActiveHotspot(null); }}
                 className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 glass rounded-full flex items-center justify-center text-white hover:text-gold transition-colors duration-300"
@@ -117,7 +117,6 @@ const TourPage = () => {
                 <Icon name="ChevronRight" size={18} />
               </button>
 
-              {/* Hotspots */}
               {hall.hotspots.map((hs, i) => (
                 <button
                   key={i}
@@ -138,7 +137,6 @@ const TourPage = () => {
                 </button>
               ))}
 
-              {/* Hotspot detail */}
               {activeHotspot !== null && (
                 <div className="absolute bottom-5 left-5 right-5 z-20 glass rounded-lg p-4 animate-fade-up">
                   <div className="flex items-start justify-between gap-3">
@@ -153,13 +151,11 @@ const TourPage = () => {
                 </div>
               )}
 
-              {/* 360 badge */}
               <div className="absolute bottom-5 right-5 z-10 w-12 h-12 glass rounded-full flex items-center justify-center">
                 <span className="font-body text-[10px] font-bold text-gold leading-none text-center">360°</span>
               </div>
             </div>
 
-            {/* Dots */}
             <div className="flex justify-center gap-2 mt-4">
               {halls.map((_, i) => (
                 <button
@@ -181,7 +177,7 @@ const TourPage = () => {
               <p className="font-body text-sm text-muted-foreground leading-relaxed mb-4">{hall.description}</p>
               <div className="flex items-center gap-2 text-xs text-muted-foreground font-body">
                 <Icon name="MapPin" size={12} className="text-gold" />
-                Период: {hall.year}
+                Музей им. С.В. Палагина, ул. Байбакова, 17
               </div>
             </div>
 
@@ -208,7 +204,7 @@ const TourPage = () => {
             </div>
 
             <div className="museum-card rounded-xl p-6">
-              <div className="font-body text-xs text-gold uppercase tracking-widest mb-3">Навигация</div>
+              <div className="font-body text-xs text-gold uppercase tracking-widest mb-3">Залы музея</div>
               <div className="grid grid-cols-1 gap-2">
                 {halls.map((h, i) => (
                   <button
@@ -218,7 +214,7 @@ const TourPage = () => {
                       i === activeHall ? 'border-gold/40 bg-gold/5' : 'border-transparent hover:border-border'
                     }`}
                   >
-                    <div className={`w-2 h-2 rounded-full ${i === activeHall ? 'bg-gold' : 'bg-border'}`} />
+                    <div className={`w-2 h-2 rounded-full flex-shrink-0 ${i === activeHall ? 'bg-gold' : 'bg-border'}`} />
                     <span className={`font-body text-sm ${i === activeHall ? 'text-gold' : 'text-muted-foreground'}`}>{h.name}</span>
                   </button>
                 ))}

@@ -21,7 +21,7 @@ const Navbar = ({ activePage, onNavigate }: NavbarProps) => {
     { id: 'tour', label: '3D Тур' },
     { id: 'exhibits', label: 'Экспонаты' },
     { id: 'gallery', label: 'Галерея' },
-    { id: 'about', label: 'О музее' },
+    { id: 'about', label: 'Биография' },
   ];
 
   return (
@@ -37,8 +37,8 @@ const Navbar = ({ activePage, onNavigate }: NavbarProps) => {
             <Icon name="Building2" size={16} className="text-[hsl(20,14%,6%)]" />
           </div>
           <div className="text-left">
-            <div className="font-display text-base leading-none text-gold">Школьный музей</div>
-            <div className="font-body text-[10px] text-muted-foreground uppercase tracking-widest mt-0.5">Виртуальная экскурсия</div>
+            <div className="font-display text-base leading-none text-gold">Музей им. С.В. Палагина</div>
+            <div className="font-body text-[10px] text-muted-foreground uppercase tracking-widest mt-0.5">Школа №103 · Краснодар</div>
           </div>
         </button>
 
