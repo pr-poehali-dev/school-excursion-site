@@ -18,10 +18,10 @@ const Navbar = ({ activePage, onNavigate }: NavbarProps) => {
 
   const links = [
     { id: 'home', label: 'Главная' },
-    { id: 'tour', label: '3D Тур' },
-    { id: 'exhibits', label: 'Экспонаты' },
-    { id: 'gallery', label: 'Галерея' },
-    { id: 'about', label: 'Биография' },
+    { id: 'heroes', label: 'Герои и подвиги' },
+    { id: 'palagin', label: 'С.В. Палагин' },
+    { id: 'echo', label: 'Эхо мужества' },
+    { id: 'song', label: '«Братишка»' },
   ];
 
   return (
@@ -34,15 +34,15 @@ const Navbar = ({ activePage, onNavigate }: NavbarProps) => {
           className="flex items-center gap-3 group"
         >
           <div className="w-8 h-8 rounded-sm gold-gradient flex items-center justify-center">
-            <Icon name="Building2" size={16} className="text-[hsl(20,14%,6%)]" />
+            <span className="text-[hsl(20,14%,6%)] text-base">★</span>
           </div>
           <div className="text-left">
-            <div className="font-display text-base leading-none text-gold">Музей им. С.В. Палагина</div>
-            <div className="font-body text-[10px] text-muted-foreground uppercase tracking-widest mt-0.5">Школа №103 · Краснодар</div>
+            <div className="font-display text-base leading-none text-gold">Герои и подвиги</div>
+            <div className="font-body text-[10px] text-muted-foreground uppercase tracking-widest mt-0.5">Выставка памяти</div>
           </div>
         </button>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {links.map(link => (
             <button
               key={link.id}
@@ -56,10 +56,10 @@ const Navbar = ({ activePage, onNavigate }: NavbarProps) => {
 
         <button
           className="hidden md:flex items-center gap-2 px-4 py-2 rounded border border-gold/40 text-gold text-sm font-body hover:bg-gold/10 transition-all duration-300"
-          onClick={() => onNavigate('tour')}
+          onClick={() => onNavigate('heroes')}
         >
-          <Icon name="Play" size={14} />
-          Начать тур
+          <Icon name="Star" size={14} />
+          В выставку
         </button>
 
         <button

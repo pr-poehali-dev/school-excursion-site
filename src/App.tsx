@@ -3,10 +3,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from '@/components/Navbar';
 import HomePage from '@/pages/HomePage';
-import TourPage from '@/pages/TourPage';
-import ExhibitsPage from '@/pages/ExhibitsPage';
-import GalleryPage from '@/pages/GalleryPage';
-import AboutPage from '@/pages/AboutPage';
+import HeroesPage from '@/pages/HeroesPage';
+import PalaginPage from '@/pages/PalaginPage';
+import SongPage from '@/pages/SongPage';
+import EchoPage from '@/pages/EchoPage';
 
 const App = () => {
   const [activePage, setActivePage] = useState('home');
@@ -19,10 +19,10 @@ const App = () => {
   const renderPage = () => {
     switch (activePage) {
       case 'home': return <HomePage onNavigate={navigate} />;
-      case 'tour': return <TourPage />;
-      case 'exhibits': return <ExhibitsPage />;
-      case 'gallery': return <GalleryPage />;
-      case 'about': return <AboutPage />;
+      case 'heroes': return <HeroesPage />;
+      case 'palagin': return <PalaginPage />;
+      case 'song': return <SongPage />;
+      case 'echo': return <EchoPage />;
       default: return <HomePage onNavigate={navigate} />;
     }
   };
@@ -38,7 +38,7 @@ const App = () => {
         <footer className="border-t border-border py-8 px-6">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="font-body text-sm text-muted-foreground">
-              © 2024 Музей им. С.В. Палагина · Школа №103, Краснодар
+              © 2024 Выставка «Герои и подвиги»
             </div>
             <div className="font-display text-sm text-gold italic">
               Помним. Гордимся. Передаём.
