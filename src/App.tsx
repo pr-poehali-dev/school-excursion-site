@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { LanguageProvider } from '@/context/LanguageContext';
+import { useLang } from '@/context/LanguageContext';
 import Navbar from '@/components/Navbar';
 import HomePage from '@/pages/HomePage';
 import HeroesPage from '@/pages/HeroesPage';
@@ -8,8 +10,9 @@ import PalaginPage from '@/pages/PalaginPage';
 import SongPage from '@/pages/SongPage';
 import EchoPage from '@/pages/EchoPage';
 
-const App = () => {
+const AppInner = () => {
   const [activePage, setActivePage] = useState('home');
+  const { t } = useLang();
 
   const navigate = (page: string) => {
     setActivePage(page);
@@ -28,25 +31,33 @@ const App = () => {
   };
 
   return (
-    <TooltipProvider>
-      <Toaster />
-      <div className="min-h-screen bg-background">
-        <Navbar activePage={activePage} onNavigate={navigate} />
-        <main key={activePage} className="animate-fade-in">
-          {renderPage()}
-        </main>
-        <footer className="border-t border-border py-8 px-6">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="font-body text-sm text-muted-foreground">
-              © 2024 Выставка «Герои и подвиги»
-            </div>
-            <div className="font-display text-sm text-gold italic">
-              Помним. Гордимся. Передаём.
-            </div>
+    <div className="min-h-screen bg-background">
+      <Navbar activePage={activePage} onNavigate={navigate} />
+      <main key={activePage} className="animate-fade-in">
+        {renderPage()}
+      </main>
+      <footer className="border-t border-border py-8 px-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="font-body text-sm text-muted-foreground">
+            {t('footer.copy')}
           </div>
-        </footer>
-      </div>
-    </TooltipProvider>
+          <div className="font-display text-sm text-gold italic">
+            {t('footer.motto')}
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+const App = () => {
+  return (
+    <LanguageProvider>
+      <TooltipProvider>
+        <Toaster />
+        <AppInner />
+      </TooltipProvider>
+    </LanguageProvider>
   );
 };
 

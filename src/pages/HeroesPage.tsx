@@ -1,67 +1,61 @@
 import { useState } from 'react';
 import Icon from '@/components/ui/icon';
+import { useLang } from '@/context/LanguageContext';
 
 interface Hero {
   id: string;
-  name: string;
+  nameKey: string;
   image: string;
   standImage: string;
-  title: string;
-  awards: string;
-  description: string;
+  awardsKey: string;
+  descKey: string;
   medals: number;
 }
 
 const heroes: Hero[] = [
   {
     id: 'epifanov',
-    name: 'Вадим Епифанов',
+    nameKey: 'heroes.epifanov.name',
     image: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/53307783-f189-42d5-94c7-0eac9cd3ebc8.jpeg',
     standImage: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/53307783-f189-42d5-94c7-0eac9cd3ebc8.jpeg',
-    title: 'Герой России',
-    awards: 'Герой Российской Федерации',
-    description: 'Вадим Епифанов — Герой Российской Федерации, удостоенный высшей государственной награды за мужество и героизм, проявленные при выполнении воинского долга.',
+    awardsKey: 'heroes.epifanov.awards',
+    descKey: 'heroes.epifanov.desc',
     medals: 1,
   },
   {
     id: 'zhuravlev',
-    name: 'Борис Журавлёв',
+    nameKey: 'heroes.zhuravlev.name',
     image: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/cc36bdbf-acf6-4308-b9ec-cb955af6a79e.jpeg',
     standImage: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/cc36bdbf-acf6-4308-b9ec-cb955af6a79e.jpeg',
-    title: 'Герой России',
-    awards: 'Герой Российской Федерации, ордена и медали',
-    description: 'Борис Журавлёв — Герой Российской Федерации. На стенде выставки представлены фотографии из его жизни, боевого пути и служения Родине.',
+    awardsKey: 'heroes.zhuravlev.awards',
+    descKey: 'heroes.zhuravlev.desc',
     medals: 2,
   },
   {
     id: 'maltsev',
-    name: 'Александр Мальцев',
+    nameKey: 'heroes.maltsev.name',
     image: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/24433956-196e-4a0d-99ad-4e16d2f68803.jpeg',
     standImage: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/24433956-196e-4a0d-99ad-4e16d2f68803.jpeg',
-    title: 'Герой России',
-    awards: 'Герой Российской Федерации, ордена Мужества',
-    description: 'Александр Мальцев — Герой Российской Федерации. На стенде выставки — фотографии из мирной и боевой жизни, свидетельства подвига и любви к Родине.',
+    awardsKey: 'heroes.maltsev.awards',
+    descKey: 'heroes.maltsev.desc',
     medals: 1,
   },
   {
     id: 'torokhov',
-    name: 'Роман Торохов',
+    nameKey: 'heroes.torokhov.name',
     image: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/71afe86e-6ba0-4b0d-9cf8-306f2bb88813.jpeg',
     standImage: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/71afe86e-6ba0-4b0d-9cf8-306f2bb88813.jpeg',
-    title: 'Герой России',
-    awards: 'Герой Российской Федерации, два ордена',
-    description: 'Роман Торохов — Герой Российской Федерации. Его история — пример стойкости, отваги и верности присяге.',
+    awardsKey: 'heroes.torokhov.awards',
+    descKey: 'heroes.torokhov.desc',
     medals: 2,
   },
 ];
 
-const introStand = {
-  image: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/5d5ac26d-9f33-46f0-bf85-c76a7920ab91.jpeg',
-  text: 'Выставка «Герои и подвиги» — это дань уважения и благодарности всем героям нашей страны.',
-};
+const introStandImage = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/5d5ac26d-9f33-46f0-bf85-c76a7920ab91.jpeg';
 
 const HeroesPage = () => {
   const [selected, setSelected] = useState<Hero | null>(null);
+  const { t } = useLang();
 
   return (
     <div className="min-h-screen pt-20 pb-16 px-6">
@@ -69,31 +63,31 @@ const HeroesPage = () => {
 
         {/* Header */}
         <div className="text-center mb-16 pt-8">
-          <div className="font-body text-xs text-gold uppercase tracking-widest mb-4">Выставка</div>
+          <div className="font-body text-xs text-gold uppercase tracking-widest mb-4">{t('heroes.label')}</div>
           <h1 className="font-display text-5xl md:text-6xl font-light text-foreground mb-4">
-            Герои
-            <span className="italic text-gold"> и Подвиги</span>
+            {t('heroes.h1.top')}
+            <span className="italic text-gold"> {t('heroes.h1.bottom')}</span>
           </h1>
           <p className="font-body text-muted-foreground max-w-xl mx-auto text-sm leading-relaxed">
-            {introStand.text}
+            {t('heroes.intro')}
           </p>
         </div>
 
         {/* Intro stand image */}
         <div className="relative rounded-xl overflow-hidden mb-16 border border-border group cursor-pointer"
           style={{ maxHeight: 420 }}
-          onClick={() => window.open(introStand.image, '_blank')}
+          onClick={() => window.open(introStandImage, '_blank')}
         >
           <img
-            src={introStand.image}
-            alt="Введение"
+            src={introStandImage}
+            alt="Introduction"
             className="w-full object-cover object-top transition-transform duration-700 group-hover:scale-102"
             style={{ height: 420, objectFit: 'cover' }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
           <div className="absolute bottom-6 left-8">
-            <div className="font-body text-xs text-gold uppercase tracking-widest mb-1">Вступление</div>
-            <div className="font-display text-2xl text-white">Выставка «Герои и подвиги»</div>
+            <div className="font-body text-xs text-gold uppercase tracking-widest mb-1">{t('heroes.intro.stand')}</div>
+            <div className="font-display text-2xl text-white">{t('heroes.intro.title')}</div>
           </div>
           <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
             <div className="bg-black/60 rounded-full p-2">
@@ -113,18 +107,15 @@ const HeroesPage = () => {
               <div className="relative overflow-hidden" style={{ height: 320 }}>
                 <img
                   src={hero.image}
-                  alt={hero.name}
+                  alt={t(hero.nameKey)}
                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                {/* Star medals */}
                 <div className="absolute bottom-4 left-4 flex gap-1">
                   {Array.from({ length: hero.medals }).map((_, i) => (
                     <span key={i} className="text-yellow-400 text-xl">★</span>
                   ))}
                 </div>
-
                 <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="bg-black/60 rounded-full p-2">
                     <Icon name="Expand" size={16} className="text-gold" />
@@ -133,28 +124,28 @@ const HeroesPage = () => {
               </div>
 
               <div className="p-6">
-                <div className="font-body text-xs text-gold uppercase tracking-widest mb-1">{hero.title}</div>
+                <div className="font-body text-xs text-gold uppercase tracking-widest mb-1">{t('heroes.hero.title')}</div>
                 <h3 className="font-display text-2xl text-foreground mb-2 group-hover:text-gold transition-colors">
-                  {hero.name}
+                  {t(hero.nameKey)}
                 </h3>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed line-clamp-2">
-                  {hero.description}
+                  {t(hero.descKey)}
                 </p>
                 <div className="mt-4 flex items-center gap-2 text-gold text-sm font-body">
                   <Icon name="ChevronRight" size={16} />
-                  Подробнее
+                  {t('heroes.more')}
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Echo of Courage stand */}
+        {/* Echo stand */}
         <div className="mb-8">
           <div className="text-center mb-8">
-            <div className="font-body text-xs text-gold uppercase tracking-widest mb-2">Стенд</div>
+            <div className="font-body text-xs text-gold uppercase tracking-widest mb-2">{t('heroes.echo.label')}</div>
             <h2 className="font-display text-3xl font-light text-foreground">
-              Эхо мужества: <span className="italic text-gold">имена, которые не забыть</span>
+              {t('heroes.echo.h2')}
             </h2>
           </div>
           <div
@@ -163,13 +154,13 @@ const HeroesPage = () => {
           >
             <img
               src="https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/3f2756b1-d1fb-47e4-9b7b-0d7f70d1d4ed.jpeg"
-              alt="Эхо мужества"
+              alt="Echo of Courage"
               className="w-full object-cover transition-transform duration-700 group-hover:scale-102"
               style={{ maxHeight: 500, objectFit: 'cover', objectPosition: 'top' }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-8">
-              <div className="font-display text-2xl text-white">«Гордое имя героя — улицам и школам города»</div>
+              <div className="font-display text-2xl text-white">{t('heroes.echo.caption')}</div>
             </div>
             <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
               <div className="bg-black/60 rounded-full p-2">
@@ -182,9 +173,10 @@ const HeroesPage = () => {
         {/* Afghan stand */}
         <div>
           <div className="text-center mb-8">
-            <div className="font-body text-xs text-gold uppercase tracking-widest mb-2">Стенд</div>
+            <div className="font-body text-xs text-gold uppercase tracking-widest mb-2">{t('heroes.afghan.label')}</div>
             <h2 className="font-display text-3xl font-light text-foreground">
-              <span className="italic text-gold">Нет героев от рожденья</span> — они рождаются в боях
+              <span className="italic text-gold">{t('heroes.afghan.h2.part1')}</span>{' '}
+              {t('heroes.afghan.h2.part2')}
             </h2>
           </div>
           <div
@@ -193,13 +185,13 @@ const HeroesPage = () => {
           >
             <img
               src="https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/56bc4acc-97f1-46bf-9b27-57390ea78f86.jpeg"
-              alt="Нет героев от рожденья"
+              alt="Afghan war"
               className="w-full object-cover transition-transform duration-700 group-hover:scale-102"
               style={{ maxHeight: 500, objectFit: 'cover', objectPosition: 'top' }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-8">
-              <div className="font-display text-2xl text-white">Войны в Афганистане и Чечне</div>
+              <div className="font-display text-2xl text-white">{t('heroes.afghan.caption')}</div>
             </div>
             <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
               <div className="bg-black/60 rounded-full p-2">
@@ -225,7 +217,7 @@ const HeroesPage = () => {
             <div className="relative" style={{ height: 360 }}>
               <img
                 src={selected.standImage}
-                alt={selected.name}
+                alt={t(selected.nameKey)}
                 className="w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -237,21 +229,21 @@ const HeroesPage = () => {
               </button>
             </div>
             <div className="p-8">
-              <div className="font-body text-xs text-gold uppercase tracking-widest mb-2">{selected.title}</div>
-              <h2 className="font-display text-3xl text-foreground mb-3">{selected.name}</h2>
+              <div className="font-body text-xs text-gold uppercase tracking-widest mb-2">{t('heroes.hero.title')}</div>
+              <h2 className="font-display text-3xl text-foreground mb-3">{t(selected.nameKey)}</h2>
               <div className="font-body text-sm text-gold mb-4 flex items-center gap-2">
                 <Icon name="Award" size={14} />
-                {selected.awards}
+                {t(selected.awardsKey)}
               </div>
               <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                {selected.description}
+                {t(selected.descKey)}
               </p>
               <button
                 onClick={() => window.open(selected.standImage, '_blank')}
                 className="mt-6 flex items-center gap-2 text-sm text-gold font-body hover:underline"
               >
                 <Icon name="ZoomIn" size={14} />
-                Открыть стенд в полном размере
+                {t('heroes.modal.zoom')}
               </button>
             </div>
           </div>

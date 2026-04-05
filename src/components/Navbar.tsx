@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/icon';
+import { useLang, type Lang } from '@/context/LanguageContext';
 
 interface NavbarProps {
   activePage: string;
@@ -9,6 +10,7 @@ interface NavbarProps {
 const Navbar = ({ activePage, onNavigate }: NavbarProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { lang, setLang, t } = useLang();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 30);
@@ -17,12 +19,15 @@ const Navbar = ({ activePage, onNavigate }: NavbarProps) => {
   }, []);
 
   const links = [
-    { id: 'home', label: 'Главная' },
-    { id: 'heroes', label: 'Герои и подвиги' },
-    { id: 'palagin', label: 'С.В. Палагин' },
-    { id: 'echo', label: 'Эхо мужества' },
-    { id: 'song', label: '«Братишка»' },
+    { id: 'home', label: t('nav.home') },
+    { id: 'heroes', label: t('nav.heroes') },
+    { id: 'palagin', label: t('nav.palagin') },
+    { id: 'echo', label: t('nav.echo') },
+    { id: 'song', label: t('nav.song') },
   ];
+
+  const toggleLang = () => setLang(lang === 'ru' ? 'en' : 'ru');
+  const otherLang: Lang = lang === 'ru' ? 'en' : 'ru';
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -37,8 +42,8 @@ const Navbar = ({ activePage, onNavigate }: NavbarProps) => {
             <span className="text-[hsl(20,14%,6%)] text-base">★</span>
           </div>
           <div className="text-left">
-            <div className="font-display text-base leading-none text-gold">Герои и подвиги</div>
-            <div className="font-body text-[10px] text-muted-foreground uppercase tracking-widest mt-0.5">Выставка памяти</div>
+            <div className="font-display text-base leading-none text-gold">{t('nav.brand')}</div>
+            <div className="font-body text-[10px] text-muted-foreground uppercase tracking-widest mt-0.5">{t('nav.subtitle')}</div>
           </div>
         </button>
 
@@ -54,20 +59,41 @@ const Navbar = ({ activePage, onNavigate }: NavbarProps) => {
           ))}
         </div>
 
-        <button
-          className="hidden md:flex items-center gap-2 px-4 py-2 rounded border border-gold/40 text-gold text-sm font-body hover:bg-gold/10 transition-all duration-300"
-          onClick={() => onNavigate('heroes')}
-        >
-          <Icon name="Star" size={14} />
-          В выставку
-        </button>
+        <div className="hidden md:flex items-center gap-3">
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded border border-white/15 text-muted-foreground text-xs font-body hover:border-gold/40 hover:text-gold transition-all duration-300 uppercase tracking-widest"
+            title={lang === 'ru' ? 'Switch to English' : 'Переключить на русский'}
+          >
+            <Icon name="Globe" size={12} />
+            {otherLang}
+          </button>
 
-        <button
-          className="md:hidden text-muted-foreground hover:text-gold transition-colors"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <Icon name={menuOpen ? 'X' : 'Menu'} size={22} />
-        </button>
+          <button
+            className="flex items-center gap-2 px-4 py-2 rounded border border-gold/40 text-gold text-sm font-body hover:bg-gold/10 transition-all duration-300"
+            onClick={() => onNavigate('heroes')}
+          >
+            <Icon name="Star" size={14} />
+            {t('nav.enter')}
+          </button>
+        </div>
+
+        <div className="flex items-center gap-3 md:hidden">
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-1 px-2 py-1 rounded border border-white/15 text-muted-foreground text-xs font-body hover:text-gold transition-colors uppercase tracking-widest"
+          >
+            <Icon name="Globe" size={11} />
+            {otherLang}
+          </button>
+
+          <button
+            className="text-muted-foreground hover:text-gold transition-colors"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <Icon name={menuOpen ? 'X' : 'Menu'} size={22} />
+          </button>
+        </div>
       </div>
 
       {menuOpen && (
