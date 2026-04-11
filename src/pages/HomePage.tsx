@@ -76,18 +76,6 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="relative py-16 border-y border-border">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((s, i) => (
-            <div key={i} className="text-center">
-              <div className="font-display text-4xl md:text-5xl font-light text-gold">{s.value}</div>
-              <div className="font-body text-xs text-muted-foreground mt-1 uppercase tracking-wider">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Quote */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
