@@ -3,11 +3,11 @@ import Icon from '@/components/ui/icon';
 import { useLang } from '@/context/LanguageContext';
 
 const PHOTO_URLS = [
-  'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/17b3374d-58e6-48f1-bcf0-81629132dd3e.jpeg',
+  'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/c0d1b66d-6056-4364-a31a-9b879eefd741.jpeg',
   'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/5a83d72a-615d-4051-9828-7e78ea732574.jpeg',
   'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/76002eee-e572-4d50-841d-7ff0c035c753.jpeg',
   'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/5e0e1481-a369-4029-809e-c84a6aede22c.jpeg',
-  'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/c0d1b66d-6056-4364-a31a-9b879eefd741.jpeg',
+  'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/17b3374d-58e6-48f1-bcf0-81629132dd3e.jpeg',
 ];
 
 const EXHIBIT_ICONS = ['🪖', '📐', '🌬️', '🗂️', '🎧', '📏', '📜', '🧢'];
