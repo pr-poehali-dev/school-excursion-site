@@ -21,6 +21,7 @@ const Navbar = ({ activePage, onNavigate }: NavbarProps) => {
   const links = [
     { id: 'home', label: t('nav.home') },
     { id: 'heroes', label: t('nav.heroes') },
+    { id: 'hall2', label: t('nav.hall2') },
     { id: 'palagin', label: t('nav.palagin') },
     { id: 'echo', label: t('nav.echo') },
     { id: 'song', label: t('nav.song') },

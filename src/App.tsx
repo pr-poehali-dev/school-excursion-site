@@ -9,6 +9,7 @@ import HeroesPage from '@/pages/HeroesPage';
 import PalaginPage from '@/pages/PalaginPage';
 import SongPage from '@/pages/SongPage';
 import EchoPage from '@/pages/EchoPage';
+import Hall2Page from '@/pages/Hall2Page';
 
 const AppInner = () => {
   const [activePage, setActivePage] = useState('home');
@@ -23,6 +24,7 @@ const AppInner = () => {
     switch (activePage) {
       case 'home': return <HomePage onNavigate={navigate} />;
       case 'heroes': return <HeroesPage />;
+      case 'hall2': return <Hall2Page />;
       case 'palagin': return <PalaginPage />;
       case 'song': return <SongPage />;
       case 'echo': return <EchoPage />;

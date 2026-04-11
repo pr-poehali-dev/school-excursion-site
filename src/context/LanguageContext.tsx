@@ -15,6 +15,7 @@ const translations: Record<string, Record<Lang, string>> = {
   'nav.palagin': { ru: 'С.В. Палагин', en: 'S.V. Palagin' },
   'nav.echo': { ru: 'Эхо мужества', en: 'Echo of Courage' },
   'nav.song': { ru: '«Братишка»', en: '"Bratishka"' },
+  'nav.hall2': { ru: 'Зал 2', en: 'Hall 2' },
   'nav.enter': { ru: 'В выставку', en: 'Enter' },
   'nav.brand': { ru: 'Герои и подвиги', en: 'Heroes & Deeds' },
   'nav.subtitle': { ru: 'Выставка памяти', en: 'Memorial Exhibition' },
