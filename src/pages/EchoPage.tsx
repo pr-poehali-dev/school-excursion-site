@@ -34,12 +34,6 @@ const EchoPage = () => {
       image: AFGHAN_STAND,
       desc: t('echo.stand2.desc'),
     },
-    {
-      title: t('echo.stand3.title'),
-      subtitle: t('echo.stand3.subtitle'),
-      image: ARTIFACTS,
-      desc: t('echo.stand3.desc'),
-    },
   ];
 
   return (
