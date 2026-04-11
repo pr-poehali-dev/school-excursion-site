@@ -54,8 +54,8 @@ const PalaginPage = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
             <div className="absolute bottom-4 left-4">
-              <div className="font-body text-xs text-gold uppercase tracking-widest mb-0.5">Фото</div>
-              <div className="font-display text-sm text-white italic">С.В. Палагин в кабине вертолёта</div>
+              <div className="font-body text-xs text-gold uppercase tracking-widest mb-0.5">{t('palagin.portrait.caption')}</div>
+              <div className="font-display text-sm text-white italic">{t('palagin.portrait.desc')}</div>
             </div>
             <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="bg-black/60 rounded-full p-1.5">
