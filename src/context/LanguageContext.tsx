@@ -185,7 +185,7 @@ const translations: Record<string, Record<Lang, string>> = {
   'hall2.photo2.title': { ru: 'Личные вещи полковника С.В. Палагина', en: 'Personal items of Colonel S.V. Palagin' },
   'hall2.photo2.desc': { ru: 'Парадный китель с наградами Героя России, переданный семьёй на хранение музею. Рядом — предметы быта и служебное снаряжение.', en: 'Dress uniform with the Hero of Russia awards, transferred by the family to the museum. Nearby — everyday items and service equipment.' },
   'hall2.photo3.tag': { ru: 'Экспозиция', en: 'Exhibition' },
-  'hall2.photo3.title': { ru: 'Экспозиция «Жизнь солдата»', en: 'Exhibition "Life of a Soldier"' },
+  'hall2.photo3.title': { ru: 'Фронтовой быт бойцов', en: 'Frontline Daily Life of Soldiers' },
   'hall2.photo3.desc': { ru: 'Воссозданный интерьер военного блиндажа: знамя 150-й стрелковой дивизии, плакат «Родина-мать зовёт!», каска, сено, фронтовой быт.', en: 'Recreated interior of a military dugout: banner of the 150th Rifle Division, poster "The Motherland Calls!", helmet, hay, frontline life.' },
   'hall2.photo4.tag': { ru: 'Стенд', en: 'Stand' },
   'hall2.photo4.title': { ru: '«И был их каждый вылет делом чести»', en: '"And every sortie was a matter of honour"' },
