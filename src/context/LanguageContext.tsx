@@ -187,7 +187,7 @@ const translations: Record<string, Record<Lang, string>> = {
   'hall2.photo3.tag': { ru: 'Экспозиция', en: 'Exhibition' },
   'hall2.photo3.title': { ru: 'Фронтовой быт бойцов', en: 'Frontline Daily Life of Soldiers' },
   'hall2.photo3.desc': { ru: 'Воссозданный интерьер военного блиндажа: знамя 150-й стрелковой дивизии, плакат «Родина-мать зовёт!», каска, сено, фронтовой быт.', en: 'Recreated interior of a military dugout: banner of the 150th Rifle Division, poster "The Motherland Calls!", helmet, hay, frontline life.' },
-  'hall2.photo4.tag': { ru: 'Памятная доска', en: 'Memorial Plaque' },
+  'hall2.photo4.tag': { ru: 'Памятное полотно', en: 'Memorial Canvas' },
   'hall2.photo4.title': { ru: 'Памятная доска с именами героев', en: 'Memorial plaque with names of heroes' },
   'hall2.photo4.desc': { ru: 'Алый стенд с золотыми именами земляков-героев, отдавших жизнь за Родину. Каждое имя — судьба, каждая звезда — память.', en: 'A crimson stand with golden names of hometown heroes who gave their lives for the Motherland. Every name is a fate, every star is a memory.' },
   'hall2.exhibit0.name': { ru: 'Китель', en: 'Dress Uniform Jacket' },
