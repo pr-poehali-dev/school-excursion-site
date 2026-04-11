@@ -1,6 +1,38 @@
+import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 
-const STAND_SONG_IMG = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/bc960892-f260-4a07-a956-1d1277a2971e.jpeg';
+const PHOTO_EXHIBITS = [
+  {
+    url: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/17b3374d-58e6-48f1-bcf0-81629132dd3e.jpeg',
+    tag: 'Памятная доска',
+    title: 'Памятная доска с именами героев',
+    desc: 'Алый стенд с золотыми именами земляков-героев, отдавших жизнь за Родину. Каждое имя — судьба, каждая звезда — память.',
+  },
+  {
+    url: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/5a83d72a-615d-4051-9828-7e78ea732574.jpeg',
+    tag: 'Выставка книг',
+    title: 'Выставка книг об авиации и героях',
+    desc: 'Витрина с изданиями о героях авиации, истории военной авиации России, жизненном пути С.В. Палагина и подвигах кубанских лётчиков.',
+  },
+  {
+    url: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/76002eee-e572-4d50-841d-7ff0c035c753.jpeg',
+    tag: 'Личные вещи',
+    title: 'Личные вещи полковника С.В. Палагина',
+    desc: 'Парадный китель с наградами Героя России, переданный семьёй на хранение музею. Рядом — предметы быта и служебное снаряжение.',
+  },
+  {
+    url: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/5e0e1481-a369-4029-809e-c84a6aede22c.jpeg',
+    tag: 'Экспозиция',
+    title: 'Экспозиция «Жизнь солдата»',
+    desc: 'Воссозданный интерьер военного блиндажа: знамя 150-й стрелковой дивизии, плакат «Родина-мать зовёт!», каска, сено, фронтовой быт.',
+  },
+  {
+    url: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/c0d1b66d-6056-4364-a31a-9b879eefd741.jpeg',
+    tag: 'Стенд',
+    title: '«И был их каждый вылет делом чести»',
+    desc: 'Стенд о 46-м гвардейском Таманском ночном бомбардировочном авиационном полку — легендарных «ночных ведьмах», совершивших 23 872 боевых вылета.',
+  },
+];
 
 const exhibits = [
   { icon: '🪖', name: 'Китель', desc: 'Форменный китель полковника С.В. Палагина' },
@@ -26,35 +58,14 @@ const awards = [
   { name: 'Медаль Нестерова', note: 'Копия государственной награды РФ' },
 ];
 
-const sections = [
-  {
-    icon: 'BookOpen',
-    title: 'Экспозиция',
-    desc: 'Постоянная экспозиция зала, посвящённая лётчику-герою С.В. Палагину и подвигам авиаторов России.',
-  },
-  {
-    icon: 'Star',
-    title: 'Стенд «И был их каждый вылет делом чести…»',
-    desc: 'Стенд посвящён лётчикам, для которых каждый боевой вылет становился воплощением долга перед Родиной и народом.',
-  },
-  {
-    icon: 'Package',
-    title: 'Личные вещи С.В. Палагина',
-    desc: 'Подлинные предметы из личного архива полковника: китель, штурманское снаряжение, памятные документы.',
-  },
-  {
-    icon: 'Library',
-    title: 'Выставка книг',
-    desc: 'Подборка изданий о героях авиации, войнах в Афганистане и Чечне, а также о жизненном пути С.В. Палагина.',
-  },
-  {
-    icon: 'Square',
-    title: 'Памятная доска',
-    desc: 'Памятная доска, увековечивающая имя и заслуги Героя Российской Федерации полковника С.В. Палагина.',
-  },
-];
-
 const Hall2Page = () => {
+  const [lightbox, setLightbox] = useState<number | null>(null);
+
+  const openLightbox = (i: number) => setLightbox(i);
+  const closeLightbox = () => setLightbox(null);
+  const prevPhoto = () => setLightbox(i => i !== null ? (i - 1 + PHOTO_EXHIBITS.length) % PHOTO_EXHIBITS.length : null);
+  const nextPhoto = () => setLightbox(i => i !== null ? (i + 1) % PHOTO_EXHIBITS.length : null);
+
   return (
     <div className="min-h-screen pt-20 pb-16 px-6">
       <div className="max-w-7xl mx-auto">
@@ -70,46 +81,61 @@ const Hall2Page = () => {
           </p>
         </div>
 
-        {/* Stand banner */}
-        <div
-          className="relative rounded-2xl overflow-hidden mb-16 border border-border group cursor-pointer"
-          onClick={() => window.open(STAND_SONG_IMG, '_blank')}
-        >
-          <img
-            src={STAND_SONG_IMG}
-            alt="Стенд зала 2"
-            className="w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-            style={{ maxHeight: 480, objectFit: 'cover' }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-          <div className="absolute bottom-6 left-8 right-8">
-            <div className="font-body text-xs text-gold uppercase tracking-widest mb-2">Стенд</div>
-            <div className="font-display text-2xl md:text-3xl text-white italic leading-tight">
-              «И был их каждый вылет делом чести,<br className="hidden md:block" /> за Родину свою, за свой народ»
-            </div>
-          </div>
-          <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="bg-black/60 rounded-full p-2">
-              <Icon name="ZoomIn" size={18} className="text-gold" />
-            </div>
-          </div>
-        </div>
-
-        {/* Sections overview */}
-        <div className="mb-16">
-          <div className="font-body text-xs text-gold uppercase tracking-widest mb-3 text-center">Состав зала</div>
-          <h2 className="font-display text-3xl font-light text-foreground mb-8 text-center">
-            Разделы <span className="italic text-gold">экспозиции</span>
+        {/* Photo Gallery */}
+        <div className="mb-20">
+          <div className="font-body text-xs text-gold uppercase tracking-widest mb-3">Фотографии зала</div>
+          <h2 className="font-display text-3xl font-light text-foreground mb-8">
+            Экспонаты <span className="italic text-gold">в деталях</span>
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {sections.map((s, i) => (
-              <div key={i} className="museum-card rounded-xl p-6 flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-lg bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
-                  <Icon name={s.icon} size={18} className="text-gold" />
+
+          {/* Featured first photo */}
+          <div
+            className="relative rounded-2xl overflow-hidden mb-4 border border-border group cursor-pointer"
+            onClick={() => openLightbox(0)}
+          >
+            <img
+              src={PHOTO_EXHIBITS[0].url}
+              alt={PHOTO_EXHIBITS[0].title}
+              className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              style={{ maxHeight: 520, objectFit: 'cover', objectPosition: 'top' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            <div className="absolute bottom-6 left-8 right-8">
+              <div className="font-body text-xs text-gold uppercase tracking-widest mb-2">{PHOTO_EXHIBITS[0].tag}</div>
+              <div className="font-display text-2xl md:text-3xl text-white italic leading-tight mb-2">
+                {PHOTO_EXHIBITS[0].title}
+              </div>
+              <div className="font-body text-sm text-white/70 max-w-2xl">{PHOTO_EXHIBITS[0].desc}</div>
+            </div>
+            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="bg-black/60 rounded-full p-2">
+                <Icon name="ZoomIn" size={18} className="text-gold" />
+              </div>
+            </div>
+          </div>
+
+          {/* Grid of remaining 4 photos */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {PHOTO_EXHIBITS.slice(1).map((photo, i) => (
+              <div
+                key={i + 1}
+                className="relative rounded-xl overflow-hidden border border-border group cursor-pointer aspect-[3/4]"
+                onClick={() => openLightbox(i + 1)}
+              >
+                <img
+                  src={photo.url}
+                  alt={photo.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-3">
+                  <div className="font-body text-[10px] text-gold uppercase tracking-wider mb-0.5">{photo.tag}</div>
+                  <div className="font-display text-sm text-white italic leading-tight line-clamp-2">{photo.title}</div>
                 </div>
-                <div>
-                  <div className="font-body text-sm font-medium text-foreground mb-1">{s.title}</div>
-                  <div className="font-body text-xs text-muted-foreground leading-relaxed">{s.desc}</div>
+                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-black/60 rounded-full p-1.5">
+                    <Icon name="ZoomIn" size={14} className="text-gold" />
+                  </div>
                 </div>
               </div>
             ))}
@@ -173,6 +199,60 @@ const Hall2Page = () => {
         </div>
 
       </div>
+
+      {/* Lightbox */}
+      {lightbox !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95"
+          onClick={closeLightbox}
+        >
+          <button
+            className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors z-10"
+            onClick={closeLightbox}
+          >
+            <Icon name="X" size={28} />
+          </button>
+
+          <button
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white transition-colors z-10 bg-black/40 rounded-full p-2"
+            onClick={(e) => { e.stopPropagation(); prevPhoto(); }}
+          >
+            <Icon name="ChevronLeft" size={28} />
+          </button>
+
+          <div
+            className="max-w-5xl w-full px-16 flex flex-col items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={PHOTO_EXHIBITS[lightbox].url}
+              alt={PHOTO_EXHIBITS[lightbox].title}
+              className="max-h-[75vh] w-auto object-contain rounded-lg mb-5"
+            />
+            <div className="text-center">
+              <div className="font-body text-xs text-gold uppercase tracking-widest mb-1">
+                {PHOTO_EXHIBITS[lightbox].tag}
+              </div>
+              <div className="font-display text-xl text-white italic mb-2">
+                {PHOTO_EXHIBITS[lightbox].title}
+              </div>
+              <div className="font-body text-sm text-white/60 max-w-xl">
+                {PHOTO_EXHIBITS[lightbox].desc}
+              </div>
+              <div className="font-body text-xs text-white/30 mt-4">
+                {lightbox + 1} / {PHOTO_EXHIBITS.length}
+              </div>
+            </div>
+          </div>
+
+          <button
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white transition-colors z-10 bg-black/40 rounded-full p-2"
+            onClick={(e) => { e.stopPropagation(); nextPhoto(); }}
+          >
+            <Icon name="ChevronRight" size={28} />
+          </button>
+        </div>
+      )}
     </div>
   );
 };
