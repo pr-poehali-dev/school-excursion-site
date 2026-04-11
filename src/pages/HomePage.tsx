@@ -1,6 +1,6 @@
 import { useLang } from '@/context/LanguageContext';
 
-const MAIN_STAND = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/bc960892-f260-4a07-a956-1d1277a2971e.jpeg';
+const MAIN_STAND = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/54ac7ce7-8606-4bc7-9a22-797169fe3ecd.jpeg';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;

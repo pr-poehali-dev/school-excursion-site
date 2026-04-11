@@ -1,7 +1,7 @@
 import Icon from '@/components/ui/icon';
 import { useLang } from '@/context/LanguageContext';
 
-const STAND_IMG = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/bc960892-f260-4a07-a956-1d1277a2971e.jpeg';
+const STAND_IMG = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/76aba6fc-53c6-4fec-a3ad-b9273afb9dc5.jpeg';
 
 const PalaginPage = () => {
   const { t } = useLang();

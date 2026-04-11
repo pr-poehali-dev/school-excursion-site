@@ -1,7 +1,7 @@
 import Icon from '@/components/ui/icon';
 import { useLang } from '@/context/LanguageContext';
 
-const ECHO_STAND = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/3f2756b1-d1fb-47e4-9b7b-0d7f70d1d4ed.jpeg';
+const ECHO_STAND = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/40e96972-7f16-40ce-bbd8-1f9110d9a19c.jpeg';
 const AFGHAN_STAND = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/56bc4acc-97f1-46bf-9b27-57390ea78f86.jpeg';
 const ARTIFACTS = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/d6bf502e-69e4-4347-b986-fd43d156c0d1.jpeg';
 

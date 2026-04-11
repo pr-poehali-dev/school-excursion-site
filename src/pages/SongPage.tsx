@@ -1,6 +1,6 @@
 import { useLang } from '@/context/LanguageContext';
 
-const SONG_IMG = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/9f7fafc9-5326-475d-8b00-ffdebf80a165.jpeg';
+const SONG_IMG = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/c0030fc1-1ac8-4958-a222-56451aaabede.jpeg';
 
 const versesRu = [
   { type: 'verse', lines: ['На стоянке, где машины', 'В ряд стоят винтом к винту,', 'И стеклянные кабины', 'С грустью смотрят в высоту.'] },

@@ -51,7 +51,7 @@ const heroes: Hero[] = [
   },
 ];
 
-const introStandImage = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/9f17c614-7690-46e1-83ab-1c7494e347b5.jpeg';
+const introStandImage = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/4deae634-1af4-4ee4-9571-e381457fe174.jpeg';
 
 const HeroesPage = () => {
   const [selected, setSelected] = useState<Hero | null>(null);
