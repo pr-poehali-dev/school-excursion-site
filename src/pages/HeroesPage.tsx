@@ -140,36 +140,6 @@ const HeroesPage = () => {
           ))}
         </div>
 
-        {/* Echo stand */}
-        <div className="mb-8">
-          <div className="text-center mb-8">
-            <div className="font-body text-xs text-gold uppercase tracking-widest mb-2">{t('heroes.echo.label')}</div>
-            <h2 className="font-display text-3xl font-light text-foreground">
-              {t('heroes.echo.h2')}
-            </h2>
-          </div>
-          <div
-            className="relative rounded-xl overflow-hidden border border-border group cursor-pointer"
-            onClick={() => window.open('https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/3f2756b1-d1fb-47e4-9b7b-0d7f70d1d4ed.jpeg', '_blank')}
-          >
-            <img
-              src="https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/3f2756b1-d1fb-47e4-9b7b-0d7f70d1d4ed.jpeg"
-              alt="Echo of Courage"
-              className="w-full object-cover transition-transform duration-700 group-hover:scale-102"
-              style={{ maxHeight: 500, objectFit: 'cover', objectPosition: 'top' }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-8">
-              <div className="font-display text-2xl text-white">{t('heroes.echo.caption')}</div>
-            </div>
-            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-              <div className="bg-black/60 rounded-full p-2">
-                <Icon name="ZoomIn" size={18} className="text-gold" />
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Afghan stand */}
         <div>
           <div className="text-center mb-8">
