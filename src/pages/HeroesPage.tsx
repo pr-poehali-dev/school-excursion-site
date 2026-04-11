@@ -16,8 +16,8 @@ const heroes: Hero[] = [
   {
     id: 'epifanov',
     nameKey: 'heroes.epifanov.name',
-    image: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/53307783-f189-42d5-94c7-0eac9cd3ebc8.jpeg',
-    standImage: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/53307783-f189-42d5-94c7-0eac9cd3ebc8.jpeg',
+    image: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/f4aeb27d-8bfe-4334-86cb-74d6bc2002b6.jpeg',
+    standImage: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/f4aeb27d-8bfe-4334-86cb-74d6bc2002b6.jpeg',
     awardsKey: 'heroes.epifanov.awards',
     descKey: 'heroes.epifanov.desc',
     medals: 1,
@@ -25,8 +25,8 @@ const heroes: Hero[] = [
   {
     id: 'zhuravlev',
     nameKey: 'heroes.zhuravlev.name',
-    image: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/cc36bdbf-acf6-4308-b9ec-cb955af6a79e.jpeg',
-    standImage: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/cc36bdbf-acf6-4308-b9ec-cb955af6a79e.jpeg',
+    image: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/29952ea6-2a8d-4bc5-b926-c721d0f32ac4.jpeg',
+    standImage: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/29952ea6-2a8d-4bc5-b926-c721d0f32ac4.jpeg',
     awardsKey: 'heroes.zhuravlev.awards',
     descKey: 'heroes.zhuravlev.desc',
     medals: 2,
@@ -34,8 +34,8 @@ const heroes: Hero[] = [
   {
     id: 'maltsev',
     nameKey: 'heroes.maltsev.name',
-    image: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/24433956-196e-4a0d-99ad-4e16d2f68803.jpeg',
-    standImage: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/24433956-196e-4a0d-99ad-4e16d2f68803.jpeg',
+    image: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/50589757-c0ec-4e46-ad36-4510c919d3f5.jpeg',
+    standImage: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/50589757-c0ec-4e46-ad36-4510c919d3f5.jpeg',
     awardsKey: 'heroes.maltsev.awards',
     descKey: 'heroes.maltsev.desc',
     medals: 1,
@@ -43,15 +43,15 @@ const heroes: Hero[] = [
   {
     id: 'torokhov',
     nameKey: 'heroes.torokhov.name',
-    image: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/71afe86e-6ba0-4b0d-9cf8-306f2bb88813.jpeg',
-    standImage: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/71afe86e-6ba0-4b0d-9cf8-306f2bb88813.jpeg',
+    image: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/d1c9c817-0678-4cae-b931-ebaaa63ab594.jpeg',
+    standImage: 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/d1c9c817-0678-4cae-b931-ebaaa63ab594.jpeg',
     awardsKey: 'heroes.torokhov.awards',
     descKey: 'heroes.torokhov.desc',
     medals: 2,
   },
 ];
 
-const introStandImage = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/5d5ac26d-9f33-46f0-bf85-c76a7920ab91.jpeg';
+const introStandImage = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/9f17c614-7690-46e1-83ab-1c7494e347b5.jpeg';
 
 const HeroesPage = () => {
   const [selected, setSelected] = useState<Hero | null>(null);
