@@ -140,37 +140,6 @@ const HeroesPage = () => {
           ))}
         </div>
 
-        {/* Afghan stand */}
-        <div>
-          <div className="text-center mb-8">
-            <div className="font-body text-xs text-gold uppercase tracking-widest mb-2">{t('heroes.afghan.label')}</div>
-            <h2 className="font-display text-3xl font-light text-foreground">
-              <span className="italic text-gold">{t('heroes.afghan.h2.part1')}</span>{' '}
-              {t('heroes.afghan.h2.part2')}
-            </h2>
-          </div>
-          <div
-            className="relative rounded-xl overflow-hidden border border-border group cursor-pointer"
-            onClick={() => window.open('https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/56bc4acc-97f1-46bf-9b27-57390ea78f86.jpeg', '_blank')}
-          >
-            <img
-              src="https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/56bc4acc-97f1-46bf-9b27-57390ea78f86.jpeg"
-              alt="Afghan war"
-              className="w-full object-cover transition-transform duration-700 group-hover:scale-102"
-              style={{ maxHeight: 500, objectFit: 'cover', objectPosition: 'top' }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-8">
-              <div className="font-display text-2xl text-white">{t('heroes.afghan.caption')}</div>
-            </div>
-            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-              <div className="bg-black/60 rounded-full p-2">
-                <Icon name="ZoomIn" size={18} className="text-gold" />
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
 
       {/* Modal */}
