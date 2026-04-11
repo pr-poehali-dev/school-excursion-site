@@ -21,7 +21,7 @@ const translations: Record<string, Record<Lang, string>> = {
   'nav.subtitle': { ru: 'Выставка памяти', en: 'Memorial Exhibition' },
 
   // Footer
-  'footer.copy': { ru: '© 2024 Выставка «Герои и подвиги»', en: '© 2024 Heroes & Deeds Exhibition' },
+  'footer.copy': { ru: '© 2026 Выставка «Герои и подвиги»', en: '© 2026 Heroes & Deeds Exhibition' },
   'footer.motto': { ru: 'Помним. Гордимся. Передаём.', en: 'We remember. We are proud. We pass it on.' },
 
   // HomePage
