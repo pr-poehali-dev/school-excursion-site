@@ -2,6 +2,7 @@ import Icon from '@/components/ui/icon';
 import { useLang } from '@/context/LanguageContext';
 
 const STAND_IMG = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/76aba6fc-53c6-4fec-a3ad-b9273afb9dc5.jpeg';
+const PORTRAIT_IMG = 'https://cdn.poehali.dev/projects/751efa10-fa50-45c3-a39f-f130456d386e/bucket/64e1b8e2-955b-4602-a8a1-5935699fe4ed.jpeg';
 
 const PalaginPage = () => {
   const { t } = useLang();
@@ -38,25 +39,51 @@ const PalaginPage = () => {
           </p>
         </div>
 
-        {/* Main stand */}
-        <div
-          className="relative rounded-2xl overflow-hidden mb-16 border border-border group cursor-pointer"
-          onClick={() => window.open(STAND_IMG, '_blank')}
-        >
-          <img
-            src={STAND_IMG}
-            alt="Palagin stand"
-            className="w-full object-cover object-top transition-transform duration-700 group-hover:scale-102"
-            style={{ maxHeight: 520, objectFit: 'cover' }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-          <div className="absolute bottom-6 left-8">
-            <div className="font-body text-xs text-gold uppercase tracking-widest mb-1">{t('palagin.stand.label')}</div>
-            <div className="font-display text-2xl text-white">{t('palagin.stand.title')}</div>
+        {/* Portrait + Stand */}
+        <div className="flex flex-col md:flex-row gap-6 mb-16 items-start">
+          {/* Portrait */}
+          <div
+            className="relative rounded-2xl overflow-hidden border border-border group cursor-pointer shrink-0 w-full md:w-72"
+            onClick={() => window.open(PORTRAIT_IMG, '_blank')}
+          >
+            <img
+              src={PORTRAIT_IMG}
+              alt="С.В. Палагин в кабине вертолёта"
+              className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              style={{ height: 320, objectFit: 'cover', objectPosition: 'top' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+            <div className="absolute bottom-4 left-4">
+              <div className="font-body text-xs text-gold uppercase tracking-widest mb-0.5">Фото</div>
+              <div className="font-display text-sm text-white italic">С.В. Палагин в кабине вертолёта</div>
+            </div>
+            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="bg-black/60 rounded-full p-1.5">
+                <Icon name="ZoomIn" size={15} className="text-gold" />
+              </div>
+            </div>
           </div>
-          <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="bg-black/60 rounded-full p-2">
-              <Icon name="ZoomIn" size={18} className="text-gold" />
+
+          {/* Main stand */}
+          <div
+            className="relative rounded-2xl overflow-hidden border border-border group cursor-pointer flex-1"
+            onClick={() => window.open(STAND_IMG, '_blank')}
+          >
+            <img
+              src={STAND_IMG}
+              alt="Palagin stand"
+              className="w-full object-cover object-top transition-transform duration-700 group-hover:scale-102"
+              style={{ height: 320, objectFit: 'cover' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute bottom-6 left-8">
+              <div className="font-body text-xs text-gold uppercase tracking-widest mb-1">{t('palagin.stand.label')}</div>
+              <div className="font-display text-xl text-white">{t('palagin.stand.title')}</div>
+            </div>
+            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="bg-black/60 rounded-full p-2">
+                <Icon name="ZoomIn" size={18} className="text-gold" />
+              </div>
             </div>
           </div>
         </div>
