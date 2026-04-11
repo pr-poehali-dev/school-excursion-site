@@ -43,14 +43,14 @@ const PalaginPage = () => {
         <div className="flex flex-col md:flex-row gap-6 mb-16 items-start">
           {/* Portrait */}
           <div
-            className="relative rounded-2xl overflow-hidden border border-border group cursor-pointer shrink-0 w-full md:w-72"
+            className="relative rounded-2xl overflow-hidden border border-border group cursor-pointer shrink-0 w-full md:w-[480px]"
             onClick={() => window.open(PORTRAIT_IMG, '_blank')}
           >
             <img
               src={PORTRAIT_IMG}
               alt="С.В. Палагин в кабине вертолёта"
               className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              style={{ height: 320, objectFit: 'cover', objectPosition: 'top' }}
+              style={{ height: 480, objectFit: 'cover', objectPosition: 'top' }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
             <div className="absolute bottom-4 left-4">
@@ -73,7 +73,7 @@ const PalaginPage = () => {
               src={STAND_IMG}
               alt="Palagin stand"
               className="w-full object-cover object-top transition-transform duration-700 group-hover:scale-102"
-              style={{ height: 320, objectFit: 'cover' }}
+              style={{ height: 480, objectFit: 'cover' }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-8">
